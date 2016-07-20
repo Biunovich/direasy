@@ -14,6 +14,9 @@ char ** chan_dir(WINDOW *win,char ** dir_t,char* path,int * sizedir,int *ptr,int
 	{
 		i++;
 	}
+	for (j=0;j<*sizedir;j++)
+		free(dir_t[j]);
+	free(dir_t);
 	*sizedir = i;
 	dir_o = calloc(sizeof(char*),i);
 	for (j=0;j<*sizedir;j++)
